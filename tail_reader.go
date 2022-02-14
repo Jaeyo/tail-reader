@@ -1,4 +1,4 @@
-package tail_reader
+package tailreader
 
 import (
 	"github.com/pkg/errors"

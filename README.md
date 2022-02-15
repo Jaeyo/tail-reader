@@ -20,12 +20,20 @@ if err != nil {
     // handle error
     ...
 }
+defer reader.Close()
 
 for reader.HasNext() {
 	line, _ := reader.Read()
 	fmt.Println(line)
 }
 
-// if file content is `aaa\nbbb\nccc`
-// then this code prints `ccc\nbbb\naaa`
+// if file content is below:
+//  aaa
+//  bbb
+//  ccc
+//
+// then this code prints below:
+//  ccc
+//  bbb
+//  aaa
 ```
